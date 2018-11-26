@@ -2,7 +2,7 @@ import  sqlite3
 
 # 데이터베이스 연결
 # 외부 파일로 생성된 일반 binary file과 sqlite 기능 연동
-filePatrh = "encore.sqlite"
+filePath = "encore.sqlite"
 conn = sqlite3.connect(filePath)
 
 # table 생성
@@ -27,6 +27,6 @@ cur.execute("select * from books")
 for data in cur.fetchall():
     print(data)
 # 조건에 맞는 데이터 검색
-
+cur.execute("select * from books where key='001'")
 # 자원반환
 conn.close()
